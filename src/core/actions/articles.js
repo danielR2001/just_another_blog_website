@@ -1,45 +1,45 @@
 import * as api from "../api";
 
-export const getPosts = () => async (dispatch) => {
-  console.log("getting posts");
+export const getArticles = () => async (dispatch) => {
+  console.log("getting articles");
   try {
-    const result = await api.getPosts();
+    const result = await api.getArticles();
     dispatch({ type: "GET_ALL", payload: result });
   } catch (error) {
     console.log(error);
   }
 };
 
-export const getPost = (id) => async (dispatch) => {
+export const getArticle = (id) => async (dispatch) => {
   try {
-    const { result } = await api.getPost(id);
+    const { result } = await api.getArticle(id);
     dispatch({ type: "GET_ONE", payload: result });
   } catch (error) {
     console.log("error");
   }
 };
 
-export const createPost = (data) => async (dispatch) => {
+export const createArticle = (data) => async (dispatch) => {
   try {
-    const { result } = await api.createPost(data);
+    const { result } = await api.createArticle(data);
     dispatch({ type: "CREATE_ONE", payload: result });
   } catch (error) {
     console.log("error");
   }
 };
 
-export const updatePost = (id, data) => async (dispatch) => {
+export const updateArticle = (id, data) => async (dispatch) => {
   try {
-    const { result } = await api.updatePost(id, data);
+    const { result } = await api.updateArticle(id, data);
     dispatch({ type: "UPDATE_ONE", payload: result });
   } catch (error) {
     console.log("error");
   }
 };
 
-export const deletePost = (id) => async (dispatch) => {
+export const deleteArticle = (id) => async (dispatch) => {
   try {
-    const { result } = await api.deletePost(id);
+    const { result } = await api.deleteArticle(id);
     dispatch({ type: "DELETE_ONE", payload: result });
   } catch (error) {
     console.log("error");

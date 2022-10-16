@@ -1,7 +1,7 @@
 export {
-  getPosts,
-  getPost,
-  createPost,
-  updatePost,
-  deletePost,
-} from "./handlers/posts.js";
+  getArticles,
+  getArticle,
+  createArticle,
+  updateArticle,
+  deleteArticle,
+} from "./handlers/articles.js";

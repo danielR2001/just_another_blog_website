@@ -16,13 +16,13 @@ const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 const rootElement = document.getElementById("root");
 render(
-  <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={Themes.default}>
-      <Provider store={store}>
+  <Provider store={store}>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={Themes.default}>
         <CssBaseline />
         <Router />
-      </Provider>
-    </ThemeProvider>
-  </StyledEngineProvider>,
+      </ThemeProvider>
+    </StyledEngineProvider>
+  </Provider>,
   rootElement
 );

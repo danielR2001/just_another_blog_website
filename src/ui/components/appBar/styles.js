@@ -6,27 +6,41 @@ export default makeStyles((theme) => ({
     backgroundColor: "#ffffff !important",
     color: "#000000 !important",
     boxShadow: "0 0 30px rgb(0 0 0 / 10%) !important",
+    borderBottom: "1px solid rgba(32, 33, 37, 0.12)",
   },
   toolBar: {
     [theme.breakpoints.down("md")]: {
-      margin: "0 24px",
+      margin: "0 16px",
     },
     [theme.breakpoints.up("md")]: {
-      margin: "0 48px",
+      margin: "0 30px",
     },
     [theme.breakpoints.up("lg")]: {
-      margin: "0 64px",
+      margin: "0 30px",
     },
     padding: "0 !important",
   },
-  grow: {
-    flexGrow: 1,
+  section1: {
+    flex: 1,
+    justifyContent: "flex-start",
+  },
+  section2: {
+    flex: 2,
+    justifyContent: "center",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  section3: {
+    flex: 1,
+    justifyContent: "flex-end",
   },
   hide: {
     display: "none",
   },
   logo: {
     height: "30px",
+    display: "flex",
   },
   inputRoot: {
     color: "inherit",
@@ -57,9 +71,6 @@ export default makeStyles((theme) => ({
       backgroundColor: alpha(theme.palette.common.black, 0.08),
     },
     margin: "0 5px",
-    [theme.breakpoints.down("sm")]: {
-      display: "none !important",
-    },
   },
   searchFocused: {
     backgroundColor: alpha(theme.palette.common.black, 0.08),
@@ -83,13 +94,14 @@ export default makeStyles((theme) => ({
     zIndex: 2,
   },
   headerIcon: {
-    fontSize: 28,
+    fontSize: 24,
     color: "rgba(0, 0, 0, 255)",
   },
-  getStartedBtn: {},
-  navItemBtn: {
-    [theme.breakpoints.down("sm")]: {
-      display: "none !important",
-    },
+  joinBtn: {
+    // width: 135,
+  },
+  navItemBtn: {},
+  navItemBtnSelected: {
+    textDecoration: "underline",
   },
 }));

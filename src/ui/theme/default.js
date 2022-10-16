@@ -10,7 +10,64 @@ const info = "#9013FE";
 const lightenRate = 7.5;
 const darkenRate = 15;
 
+const remFontUnit = 0.0625;
+
 const defaultTheme = createTheme({
+  typography: {
+    fontFamily: "'Roboto', 'PT Sans', 'Helvetica', sans-serif",
+    h1: {
+      fontSize: `${remFontUnit * 96}rem`,
+      color: "black",
+    },
+    h2: {
+      fontSize: `${remFontUnit * 60}rem`,
+      color: "black",
+    },
+    h3: {
+      fontSize: `${remFontUnit * 48}rem`,
+      color: "black",
+    },
+    h4: {
+      fontSize: `${remFontUnit * 34}rem`,
+      color: "black",
+    },
+    h5: {
+      fontSize: `${remFontUnit * 24}rem`,
+      color: "black",
+    },
+    h6: {
+      fontSize: `${remFontUnit * 20}rem`,
+      color: "black",
+    },
+    subtitle1: {
+      ontSize: `${remFontUnit * 16}rem`,
+      color: "black",
+    },
+    subtitle2: {
+      fontSize: `${remFontUnit * 14}rem`,
+      color: "black",
+    },
+    body1: {
+      fontSize: `${remFontUnit * 16}rem`,
+      color: "black",
+    },
+    body2: {
+      fontSize: `${remFontUnit * 14}rem`,
+      color: "black",
+    },
+    button: {
+      fontSize: `${remFontUnit * 14}rem`,
+      color: "black",
+    },
+    caption: {
+      fontSize: `${remFontUnit * 12}rem`,
+      color: "black",
+    },
+    overline: {
+      fontSize: `${remFontUnit * 10}rem`,
+      color: "black",
+    },
+  },
   spacing: 2,
   palette: {
     primary: {
@@ -67,9 +124,9 @@ const defaultTheme = createTheme({
           textTransform: "none",
           backgroundColor: "transparent",
           ...(ownerState.variant === "contained" && {
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: "#000000",
             ":hover": {
-              backgroundColor: theme.palette.primary.light,
+              backgroundColor: alpha("#000000", 0.8),
             },
             ":active": {
               backgroundColor: "#ff0000",
@@ -93,25 +150,40 @@ const defaultTheme = createTheme({
         }),
       },
     },
-  },
-  typography: {
-    h1: {
-      fontSize: "3rem",
-    },
-    h2: {
-      fontSize: "2rem",
-    },
-    h3: {
-      fontSize: "1.64rem",
-    },
-    h4: {
-      fontSize: "1.5rem",
-    },
-    h5: {
-      fontSize: "1.285rem",
-    },
-    h6: {
-      fontSize: "1.142rem",
+    MuiIconButton: {
+      styleOverrides: {
+        root: ({ ownerState, theme }) => ({
+          height: "40px",
+          borderRadius: "99em",
+          boxShadow: "none !important",
+          textTransform: "none",
+          backgroundColor: "transparent",
+          ...(ownerState.variant === "contained" && {
+            backgroundColor: "#000000",
+            ":hover": {
+              backgroundColor: alpha("#000000", 0.8),
+            },
+            ":active": {
+              backgroundColor: "#ff0000",
+            },
+          }),
+          ...(ownerState.variant === "outlined" && {
+            backgroundColor: "transparent",
+            ":hover": {
+              backgroundColor: alpha(theme.palette.primary.light, 0.1),
+            },
+          }),
+          ...(ownerState.variant === "text" && {
+            color: "black",
+            ":hover": {
+              backgroundColor: alpha(theme.palette.common.black, 0.08),
+            },
+            "&& .MuiTouchRipple-child": {
+              backgroundColor: alpha(theme.palette.common.black, 0.08),
+            },
+          }),
+        }),
+      },
     },
   },
 });
